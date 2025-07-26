@@ -37,24 +37,16 @@ export default function Hero() {
           </main>
         </div>
       </div>
-      
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <div className="h-56 w-full bg-emerald-50 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
-          <div className="grid grid-cols-2 gap-8 p-8">
-            <div className="text-center">
-              <LineChart className="w-12 h-12 mx-auto text-emerald-600" />
-              <p className="mt-2 text-lg font-semibold">Datos Transparentes</p>
-            </div>
-            <div className="text-center">
-              <Users className="w-12 h-12 mx-auto text-emerald-600" />
-              <p className="mt-2 text-lg font-semibold">Participación Activa</p>
-            </div>
-            <div className="text-center">
-              <FileText className="w-12 h-12 mx-auto text-emerald-600" />
-              <p className="mt-2 text-lg font-semibold">Reportes Ciudadanos</p>
-            </div>
-          </div>
-        </div>
+        <img
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          src="/images/hero-bg.jpg"
+          alt="Background"
+          loading="eager"
+          fetchPriority="high"
+          width="5000"
+          height="3500"
+        />
       </div>
     </div>
   );
