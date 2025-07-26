@@ -44,8 +44,8 @@ export default function Hero() {
           alt="Background"
           loading="eager"
           fetchPriority="high"
-          width="5000"
-          height="3500"
+          width="3000"
+          height="1997"
         />
       </div>
     </div>
