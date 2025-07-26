@@ -12,7 +12,7 @@ import Events from './pages/Events';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/SITP/">
       <div className="min-h-screen bg-gray-50 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80')] bg-cover bg-center bg-fixed">
         <div className="min-h-screen bg-white/90">
           <Navbar />
