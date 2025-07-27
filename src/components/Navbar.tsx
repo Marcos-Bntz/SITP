@@ -21,22 +21,22 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-lg fixed w-full z-40">
+      <nav className="bg-slate-900/95 backdrop-blur-md shadow-2xl fixed w-full z-40 border-b border-emerald-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
-                <Link to="/" className="text-xl font-bold text-emerald-600">SITPC</Link>
+                <Link to="/" className="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors duration-200">SITPC</Link>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 {menuItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-200 ${
                       location.pathname === item.href
-                        ? 'text-emerald-600 border-b-2 border-emerald-600'
-                        : 'text-gray-700 hover:text-emerald-600'
+                        ? 'text-emerald-400 border-b-2 border-emerald-400'
+                        : 'text-gray-300 hover:text-emerald-400'
                     }`}
                   >
                     {item.icon && <item.icon className="w-4 h-4 mr-2" />}
@@ -49,7 +49,7 @@ export default function Navbar() {
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
               <button
                 onClick={() => setIsLoginModalOpen(true)}
-                className="bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-700 flex items-center"
+                className="bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-700 flex items-center transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
                 <User className="w-4 h-4 mr-2" />
                 Iniciar Sesión
@@ -59,7 +59,7 @@ export default function Navbar() {
             <div className="flex items-center sm:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-emerald-600"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-emerald-400 transition-colors duration-200"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -68,16 +68,16 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="sm:hidden">
+          <div className="sm:hidden bg-slate-900/98 backdrop-blur-md border-b border-emerald-500/20">
             <div className="pt-2 pb-3 space-y-1">
               {menuItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block pl-3 pr-4 py-2 text-base font-medium ${
+                  className={`block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200 ${
                     location.pathname === item.href
-                      ? 'text-emerald-600 bg-emerald-50'
-                      : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                      ? 'text-emerald-400 bg-emerald-900/30'
+                      : 'text-gray-300 hover:text-emerald-400 hover:bg-slate-800/50'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -89,7 +89,7 @@ export default function Navbar() {
                   setIsOpen(false);
                   setIsLoginModalOpen(true);
                 }}
-                className="w-full text-left pl-3 pr-4 py-2 text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-50"
+                className="w-full text-left pl-3 pr-4 py-2 text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-slate-800/50 transition-colors duration-200"
               >
                 Iniciar Sesión
               </button>

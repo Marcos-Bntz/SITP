@@ -35,40 +35,40 @@ export default function Commerce() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-8">Comercios Locales</h1>
+      <h1 className="text-4xl font-bold text-white mb-8 drop-shadow-lg">Comercios Locales</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {comercios.map((comercio) => (
-          <Card key={comercio.id} className="overflow-hidden">
+          <div key={comercio.id} className="bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-slate-700">
             <img
               src={comercio.imagen}
               alt={comercio.nombre}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold mb-2">{comercio.nombre}</h2>
-              <p className="text-emerald-600 font-medium mb-4">{comercio.categoria}</p>
+              <h2 className="text-xl font-bold mb-2 text-white">{comercio.nombre}</h2>
+              <p className="text-emerald-400 font-medium mb-4">{comercio.categoria}</p>
               
               <div className="space-y-2">
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-200">
                   <MapPin className="w-4 h-4 mr-2" />
                   {comercio.direccion}
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-200">
                   <Clock className="w-4 h-4 mr-2" />
                   {comercio.horario}
                 </div>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-200">
                   <Phone className="w-4 h-4 mr-2" />
                   {comercio.telefono}
                 </div>
               </div>
               
-              <button className="mt-4 w-full bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition-colors">
+              <button className="mt-4 w-full bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition-colors duration-200">
                 Ver Detalles
               </button>
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </div>

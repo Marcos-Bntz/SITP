@@ -13,21 +13,19 @@ import Events from './pages/Events';
 function App() {
   return (
     <Router basename="/SITP/">
-      <div className="min-h-screen bg-gray-50 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80')] bg-cover bg-center bg-fixed">
-        <div className="min-h-screen bg-white/90">
-          <Navbar />
-          <div className="pt-16">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/transparency" element={<Transparency />} />
-              <Route path="/participation" element={<Participation />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/commerce" element={<Commerce />} />
-              <Route path="/delivery" element={<Delivery />} />
-              <Route path="/phones" element={<Phones />} />
-              <Route path="/events" element={<Events />} />
-            </Routes>
-          </div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-center bg-fixed bg-blend-overlay">
+        <Navbar />
+        <div className="pt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/transparency" element={<Transparency />} />
+            <Route path="/participation" element={<Participation />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/commerce" element={<Commerce />} />
+            <Route path="/delivery" element={<Delivery />} />
+            <Route path="/phones" element={<Phones />} />
+            <Route path="/events" element={<Events />} />
+          </Routes>
         </div>
       </div>
     </Router>
