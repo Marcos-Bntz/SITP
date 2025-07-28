@@ -38,44 +38,44 @@ export default function Events() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-white mb-8 drop-shadow-lg">Eventos</h1>
+      <h1 className="text-4xl font-bold text-gray-900 mb-8">Eventos</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {eventos.map((evento) => (
-          <div key={evento.id} className="bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-slate-700">
+          <Card key={evento.id} className="overflow-hidden">
             <img
               src={evento.imagen}
               alt={evento.titulo}
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-bold mb-2 text-white">{evento.titulo}</h2>
-              <p className="text-gray-200 mb-4">{evento.descripcion}</p>
+              <h2 className="text-xl font-bold mb-2">{evento.titulo}</h2>
+              <p className="text-gray-600 mb-4">{evento.descripcion}</p>
               
               <div className="space-y-2">
-                <div className="flex items-center text-gray-200">
+                <div className="flex items-center text-gray-600">
                   <Calendar className="w-4 h-4 mr-2" />
                   {evento.fecha}
                 </div>
-                <div className="flex items-center text-gray-200">
+                <div className="flex items-center text-gray-600">
                   <Clock className="w-4 h-4 mr-2" />
                   {evento.hora}
                 </div>
-                <div className="flex items-center text-gray-200">
+                <div className="flex items-center text-gray-600">
                   <MapPin className="w-4 h-4 mr-2" />
                   {evento.lugar}
                 </div>
-                <div className="flex items-center text-gray-200">
+                <div className="flex items-center text-gray-600">
                   <Users className="w-4 h-4 mr-2" />
                   {evento.asistentes} asistentes
                 </div>
               </div>
               
-              <button className="mt-4 w-full bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition-colors duration-200">
+              <button className="mt-4 w-full bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition-colors">
                 Inscribirse
               </button>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>

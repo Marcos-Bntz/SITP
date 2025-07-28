@@ -14,11 +14,11 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-colors';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-all duration-200';
   
   const variants = {
-    primary: 'bg-emerald-600 text-white hover:bg-emerald-700',
-    secondary: 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200',
+    primary: 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-emerald-500/25 hover:shadow-emerald-500/40',
+    secondary: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 border border-emerald-200 dark:border-emerald-700',
   };
 
   const sizes = {

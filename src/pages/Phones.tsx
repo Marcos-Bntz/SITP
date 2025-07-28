@@ -13,7 +13,7 @@ export default function Phones() {
         { nombre: 'Ambulancia', numero: '107' },
       ],
       icon: Shield,
-      color: 'text-red-400',
+      color: 'text-red-600',
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export default function Phones() {
         { nombre: 'Farmacia de Guardia', numero: '555-6666' },
       ],
       icon: Heart,
-      color: 'text-emerald-400',
+      color: 'text-emerald-600',
     },
     {
       id: 3,
@@ -35,32 +35,32 @@ export default function Phones() {
         { nombre: 'Reclamos', numero: '555-9999' },
       ],
       icon: Truck,
-      color: 'text-blue-400',
+      color: 'text-blue-600',
     },
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-4xl font-bold text-white mb-8 drop-shadow-lg">Teléfonos Útiles</h1>
+      <h1 className="text-4xl font-bold text-gray-900 mb-8">Teléfonos Útiles</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {telefonos.map((categoria) => {
           const Icon = categoria.icon;
           return (
-            <div key={categoria.id} className="bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-slate-700">
+            <Card key={categoria.id} className="overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center mb-6">
                   <Icon className={`w-8 h-8 ${categoria.color} mr-3`} />
-                  <h2 className="text-2xl font-bold text-white">{categoria.categoria}</h2>
+                  <h2 className="text-2xl font-bold">{categoria.categoria}</h2>
                 </div>
                 
                 <div className="space-y-4">
                   {categoria.numeros.map((telefono, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-slate-700/50 rounded-lg border border-slate-600">
-                      <span className="text-gray-200 font-medium">{telefono.nombre}</span>
+                    <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">{telefono.nombre}</span>
                       <a
                         href={`tel:${telefono.numero}`}
-                        className="flex items-center text-emerald-400 hover:text-emerald-300 transition-colors duration-200"
+                        className="flex items-center text-emerald-600 hover:text-emerald-700"
                       >
                         <Phone className="w-4 h-4 mr-2" />
                         {telefono.numero}
@@ -69,7 +69,7 @@ export default function Phones() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Card>
           );
         })}
       </div>
